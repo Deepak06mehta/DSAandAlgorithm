@@ -1,0 +1,75 @@
+Contains Duplicate — Problem Statement (C#)
+📌 Description
+
+Given an integer array nums, return true if any value appears at least twice, and return false if all elements are distinct.
+
+🧾 Example 1
+Input: nums = [1,2,3,1]
+Output: true
+Explanation: 1 appears twice
+🧾 Example 2
+Input: nums = [1,2,3,4]
+Output: false
+Explanation: All elements are unique
+🧾 Example 3
+Input: nums = [1,1,1,3,3,4,3,2,4,2]
+Output: true
+
+⚙️ Constraints
+1 ≤ nums.Length ≤ 100000
+-10^9 ≤ nums[i] ≤ 10^9
+
+💻 Optimal Solution in C#
+
+👉 Using HashSet (O(n) time, O(n) space)
+
+using System;
+using System.Collections.Generic;
+
+public class Solution {
+    public bool ContainsDuplicate(int[] nums) {
+        HashSet<int> seen = new HashSet<int>();
+
+        foreach (int num in nums) {
+            if (seen.Contains(num)) {
+                return true;
+            }
+            seen.Add(num);
+        }
+
+        return false;
+    }
+}
+⚡ Complexity
+Approach	Time	Space
+HashSet	O(n)	O(n)
+🧠 Interview Explanation (Senior-Level)
+
+You can explain like this:
+
+“We use a HashSet to track elements we've already seen”
+“If an element is found again, we return immediately (early exit)”
+“This avoids nested loops and gives O(n) time complexity”
+🔄 Alternative Approach (Space Optimized)
+
+👉 If interviewer asks to reduce space:
+
+public bool ContainsDuplicate(int[] nums) {
+    Array.Sort(nums);
+
+    for (int i = 1; i < nums.Length; i++) {
+        if (nums[i] == nums[i - 1]) {
+            return true;
+        }
+    }
+
+    return false;
+}
+Trade-off:
+Time: O(n log n)
+Space: O(1)
+
+🚀 Follow-ups (Common in Interviews)
+Contains Duplicate II → within distance k
+Contains Duplicate III → value difference constraint
+Streaming data version (real-time systems)
