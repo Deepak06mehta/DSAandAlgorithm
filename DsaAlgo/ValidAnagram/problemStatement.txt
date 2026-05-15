@@ -1,0 +1,85 @@
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+Example 1:
+Input: s = "anagram", t = "nagaram"
+Output: true
+
+Example 2:
+Input: s = "rat", t = "car"
+Output: false
+
+Constraints:
+1 <= s.length, t.length <= 5 * 104
+s and t consist of lowercase English letters.
+
+Key Insight (What interviewers expect)
+
+The brute-force approach is:
+Try to match/remove every character one by one -> O(n^2)
+
+Better approach:
+Sort both strings and compare them -> O(n log n)
+
+Optimal approach:
+Use character frequency counting -> O(n)
+
+Since the strings contain only lowercase English letters, we can use an int[26] instead of a hash map.
+
+Interview-Level Explanation
+
+When explaining, say:
+
+"First, if the lengths are different, they cannot be anagrams."
+"Then we count each character from s and subtract each character from t."
+"If both strings have the same character frequencies, every count becomes zero."
+"This gives O(n) time complexity and O(1) extra space because there are only 26 lowercase letters."
+
+Complexity
+
+Time Complexity: O(n)
+Space Complexity: O(1)
+
+Here, O(1) space is valid because the frequency array size is always 26, independent of input length.
+
+Common Follow-up Questions
+
+What if the strings are not limited to lowercase English letters?
+Use a Dictionary<char, int> instead of int[26].
+
+What if the strings contain Unicode characters?
+Use a dictionary keyed by character/rune depending on the language's Unicode handling.
+
+What if spaces, punctuation, or casing should be ignored?
+Normalize the input first:
+Convert to lowercase.
+Skip non-letter characters.
+Then apply the frequency-count approach.
+
+What if we need to check many strings against the same string s?
+Precompute the frequency signature of s once, then compare each new string against that signature.
+
+What if we need to group a list of words into anagram groups?
+Use each word's sorted form or frequency signature as a dictionary key.
+Example: "eat", "tea", and "ate" share the same key.
+
+What if the input is very large and cannot fit in memory?
+If strings are streamed, count characters incrementally.
+For lowercase English letters, only 26 counters are needed, so the full string does not need to be stored.
+
+What if only one extra or missing character is allowed?
+Compare frequency arrays and count the total difference.
+This becomes a variation like "valid anagram with one edit allowed."
+
+What if the interviewer asks for an alternative solution?
+Sorting is simpler to explain but slower:
+Sort s and t, then compare.
+Time Complexity: O(n log n)
+Space Complexity: depends on the sorting implementation.
+
+Common Mistakes
+
+Forgetting to check length first.
+Using sorting when the interviewer expects O(n).
+Using int[26] when the input is not guaranteed to be lowercase English letters.
+Assuming two strings are anagrams just because they contain the same unique characters.
+Example: "aab" and "abb" have the same unique characters but are not anagrams.
