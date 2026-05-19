@@ -4,6 +4,9 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 # User-specific files
+*.DS_Store
+.DS_Store
+**/.DS_Store
 *.suo
 *.user
 *.userosscache
@@ -32,6 +35,9 @@ bld/
 
 ### VisualStudioCode ###
 .vscode/
+
+### JetBrains Rider / IntelliJ ###
+.idea/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
