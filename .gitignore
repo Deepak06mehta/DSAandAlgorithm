@@ -1,2 +1,44 @@
+# macOS
 .DS_Store
 **/.DS_Store
+
+# JetBrains Rider / IntelliJ
+.idea/
+.run/
+*.sln.iml
+*.DotSettings.user
+
+# Visual Studio / VS Code local files
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# .NET build outputs
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+artifacts/
+TestResults/
+
+# NuGet generated files
+project.lock.json
+project.fragment.lock.json
+*.nuget.props
+*.nuget.targets
+*.nupkg
+packages/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.cache
+*.pid
+*.swp
+*~

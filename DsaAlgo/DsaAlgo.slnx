@@ -1,5 +1,0 @@
-<Solution>
-  <Project Path="ContainsDuplicate/ContainsDuplicate.csproj" />
-  <Project Path="TwoSum\TwoSum.csproj" />
-  <Project Path="ValidAnagram/ValidAnagram.csproj" />
-</Solution>
