@@ -1,5 +1,9 @@
 <Solution>
-  <Project Path="DsaAlgo/ContainsDuplicate/ContainsDuplicate.csproj" />
-  <Project Path="DsaAlgo\TwoSum\TwoSum.csproj" />
-  <Project Path="DsaAlgo/ValidAnagram/ValidAnagram.csproj" />
+  <Folder Name="/Arrays/">
+    <Project Path="DsaAlgo/ContainsDuplicate/ContainsDuplicate.csproj" />
+    <Project Path="DsaAlgo\TwoSum\TwoSum.csproj" />
+  </Folder>
+  <Folder Name="/String/">
+    <Project Path="DsaAlgo/ValidAnagram/ValidAnagram.csproj" />
+  </Folder>
 </Solution>
